@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "push": "node pushCode.js"
+    "push": "node pushCode.js",
+    "sync-aliases": "node scripts/sync-aliases.js",
+    "postinstall": "npm run sync-aliases"
   },
   "dependencies": {
     "react": "^19.1.0",
