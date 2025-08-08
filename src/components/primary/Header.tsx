@@ -26,7 +26,7 @@ const Header = () => {
   }, [isSideBarOpen]);
 
   return (
-    <header className='header-section'>
+    <header className='header-section bg-white'>
         {isSideBarOpen && <div className='faded-backdrop' onClick={() => closeSidebar()}></div>}
 
         <div className="left-section">

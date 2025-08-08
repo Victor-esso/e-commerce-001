@@ -9,9 +9,13 @@ type props = {
 const PageContainer : React.FC<props> = ({ children }) => {
     return (
         <>
-            <NotificationBar />
+            <div className='vertical *:w-full fixed w-full h-max inset-0 z-[10]'>
+                <NotificationBar />
+                <section className='w-full max-w-[1920px] mx-auto '>
+                    <Header/>
+                </section>
+            </div>
             <section className='w-full max-w-[1920px] mx-auto'>
-                <Header/>
                 {children}
             </section>
         </>

@@ -9,6 +9,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+.webpage {
+  @apply pt-[96px] md:pt-[100px];
+}
+
 .ghost-hover-md {
   @apply relative;
   z-index: 0;
@@ -58,6 +62,10 @@
 }
 .btn.outline {
   @apply text-natural-7 bg-transparent outline-none;
+}
+
+.light-span > span {
+  @apply text-natural-4;
 }
 
 .header-section {
@@ -143,4 +151,15 @@
 }
 .single-link:hover > span {
   @apply text-natural-7;
+}
+
+.slider-section {
+  @apply uni-pad w-full relative vertical *:w-full gap-8;
+}
+.slider-section .slider-container {
+  @apply bg-neutral-300 aspect-[1/0.977491961414791] lg:aspect-[1/0.4785714285714286];
+}
+.slider-section .header-text {
+  @apply light-span font-medium text-natural-7 leading-[120%];
+  font-size: clamp(40px, 11.5vw, 94px);
 }
