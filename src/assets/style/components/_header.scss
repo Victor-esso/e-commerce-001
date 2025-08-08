@@ -93,7 +93,7 @@
         @apply button-m text-natural-4;
     }
 
-    &:hover{
+    &.active{
         >span{
             @apply text-natural-7;
         }

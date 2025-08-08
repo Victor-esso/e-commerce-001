@@ -71,7 +71,16 @@
 }
 
 .btn-arrow {
-  @apply horizontal gap-1 button-xs border-b hover:gap-3 transition-all;
+  @apply horizontal gap-1 button-xs border-b hover:gap-3 transition-all pr-5 relative;
+}
+.btn-arrow[class*=button-s] {
+  @apply pr-6;
+}
+.btn-arrow .icon {
+  @apply absolute abs-center-y right-0 transition-all;
+}
+.btn-arrow:hover .icon {
+  @apply -right-1;
 }
 
 .header-section {
@@ -155,7 +164,7 @@
 .single-link > span {
   @apply button-m text-natural-4;
 }
-.single-link:hover > span {
+.single-link.active > span {
   @apply text-natural-7;
 }
 
@@ -201,6 +210,13 @@
 }
 .banner-content h3 {
   @apply lg:headline-5 headline-6 text-natural-7;
+}
+
+.new-arrivals {
+  @apply uni-pad md:pt-12 md:py-0 vertical *:w-full md:gap-12 gap-10 py-8;
+}
+.new-arrivals .icon {
+  @apply absolute;
 }
 
 /* prevent scroll when side bar is active */

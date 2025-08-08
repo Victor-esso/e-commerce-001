@@ -1,4 +1,5 @@
 import BannerGrid from "@components/BannerGrid"
+import NewArrivals from "@components/NewArrivals"
 import SliderSection from "@components/SliderSection"
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <section className="webpage">
       <SliderSection/>
       <BannerGrid />
+      <NewArrivals/>
     </section>
   )
 }

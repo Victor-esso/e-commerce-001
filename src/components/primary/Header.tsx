@@ -67,7 +67,7 @@ const Header = () => {
                 </div>
                 </NavLink>
                 <NavLink
-                  to="/cart"
+                  to="/wishlist"
                   className={({ isActive }) => `${isActive ? 'active' : ''} single-link`}
                 > 
                   <span>Wishlist</span>

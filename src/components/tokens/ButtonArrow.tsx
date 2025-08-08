@@ -13,7 +13,9 @@ const ButtonArrow: React.FC<Props> = ({ children, className = '', iconSize = 18,
   return (
     <button className={mergedClassName} {...rest}>
       {children}
-      <Icon icon="solar:arrow-right-linear" width={iconSize} />
+      <div className='icon'>
+        <Icon  icon="solar:arrow-right-linear" width={iconSize} />
+      </div>
     </button>
   );
 };

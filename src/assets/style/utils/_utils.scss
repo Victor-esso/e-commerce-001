@@ -67,6 +67,19 @@
 .light-span>span{
     @apply text-natural-4;
 }
+
 .btn-arrow{
-    @apply horizontal gap-1 button-xs border-b hover:gap-3 transition-all ;
+    @apply horizontal gap-1 button-xs border-b hover:gap-3 transition-all pr-5 relative;
+    &[class*="button-s"]{
+        @apply pr-6;
+    }
+    .icon{
+        @apply absolute abs-center-y right-0 transition-all;
+    }
+    
+    &:hover{
+        .icon{
+            @apply -right-1;    
+        }
+    }
 }
