@@ -83,6 +83,20 @@
   @apply -right-1;
 }
 
+.img-fit-parent, .product-card > .top > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.starsRating {
+  @apply horizontal gap-[2px] text-natural-3;
+}
+.starsRating > *.active {
+  @apply text-natural-5;
+}
+
 .header-section {
   @apply uni-pad w-full h-[60px] relative horizontal justify-between;
 }
@@ -217,6 +231,81 @@
 }
 .new-arrivals .icon {
   @apply absolute;
+}
+
+.product-card {
+  @apply relative lg:w-1/4 md:w-[262px] w-[231px] h-max vertical *:w-full gap-3;
+}
+.product-card > .top {
+  @apply w-full aspect-[1/1.33206106870229] relative overflow-hidden;
+}
+.product-card > .top > div {
+  position: absolute;
+  @apply w-max h-max;
+}
+.product-card > .top .badges {
+  @apply top-4 left-4 vertical gap-2;
+}
+.product-card > .top .badges > span {
+  @apply px-[14px] py-1 hairline-1 rounded-[4px];
+}
+.product-card > .top .badges > span.new {
+  @apply text-natural-7 bg-white;
+}
+.product-card > .top .badges > span.discount {
+  @apply text-white bg-cus-green;
+}
+.product-card > .top .wishlist {
+  @apply top-4 right-4;
+}
+.product-card > .top .wishlist > button {
+  @apply w-8 h-8 rounded-full bg-white shadow-xl grid-center transition-all lg:scale-0 lg:opacity-0;
+}
+.product-card > .top .wishlist > button .active {
+  @apply hidden text-cus-red;
+}
+.product-card > .top .wishlist > button:is(:hover) {
+  @apply delay-0 lg:scale-125;
+}
+.product-card > .top .wishlist > button:is(:hover):active {
+  @apply scale-95;
+}
+.product-card > .top .wishlist > button:is(.active) .in-active {
+  @apply hidden;
+}
+.product-card > .top .wishlist > button:is(.active) .active {
+  @apply block;
+}
+.product-card > .top .add-to-cart {
+  @apply w-full px-4 pb-4 bottom-0 lg:-bottom-16 transition-all lg:opacity-0;
+}
+.product-card > .details {
+  @apply vertical *:w-full gap-3;
+}
+.product-card > .details > p {
+  @apply body-2-semi 3xl:text-xl text-natural-7;
+}
+.product-card > .details > .prices {
+  @apply horizontal gap-3;
+}
+.product-card > .details > .prices > span {
+  @apply caption-1-semi text-natural-7;
+}
+.product-card > .details > .prices > span.old {
+  @apply font-normal text-natural-4;
+  text-decoration: line-through;
+}
+.product-card:hover > .top .add-to-cart {
+  @apply delay-150 bottom-0 opacity-100;
+}
+.product-card:hover > .top .wishlist > button {
+  @apply delay-100 lg:scale-110 opacity-100;
+}
+.product-card:hover > .top .wishlist > button:is(:hover) {
+  @apply delay-0 lg:scale-125;
+}
+.product-card:hover > .top .wishlist > button:is(:hover):active {
+  @apply scale-95;
 }
 
 /* prevent scroll when side bar is active */
