@@ -11,11 +11,9 @@ const PageContainer : React.FC<props> = ({ children }) => {
         <>
             <div className='vertical *:w-full fixed w-full h-max inset-0 z-[10]'>
                 <NotificationBar />
-                <section className='w-full max-w-[1920px] mx-auto '>
-                    <Header/>
-                </section>
+                <Header/>
             </div>
-            <section className='w-full max-w-[1920px] mx-auto'>
+            <section className='w-full'>
                 {children}
             </section>
         </>

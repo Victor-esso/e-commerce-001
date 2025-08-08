@@ -14,6 +14,8 @@
 }
 
 .ghost-hover-md {
+  --size: 1.7;
+  --size-hover: 1.5;
   @apply relative;
   z-index: 0;
 }
@@ -27,10 +29,10 @@
   z-index: -1;
 }
 .ghost-hover-md:hover::after {
-  @apply scale-[1.7];
+  @apply scale-[var(--size)];
 }
 .ghost-hover-md:hover:active::after {
-  @apply bg-neutral-800/[.06] scale-[1.5];
+  @apply bg-neutral-800/[.06] scale-[var(--size-hover)];
 }
 
 .ghost-hover-full, .header-section .other-actions button, .header-section .left-section .menu-btn {
@@ -66,6 +68,10 @@
 
 .light-span > span {
   @apply text-natural-4;
+}
+
+.btn-arrow {
+  @apply horizontal gap-1 button-xs border-b hover:gap-3 transition-all;
 }
 
 .header-section {
@@ -154,7 +160,7 @@
 }
 
 .slider-section {
-  @apply uni-pad w-full relative vertical *:w-full gap-8;
+  @apply uni-pad w-full relative vertical *:w-full gap-8 pb-10;
 }
 .slider-section .slider-container {
   @apply bg-neutral-300 aspect-[1/0.977491961414791] lg:aspect-[1/0.4785714285714286];
@@ -162,4 +168,42 @@
 .slider-section .header-text {
   @apply light-span font-medium text-natural-7 leading-[120%];
   font-size: clamp(40px, 11.5vw, 94px);
+}
+
+.card-p-style, .banner-grid > div:first-child > div {
+  @apply absolute z-[1] inset-8 md:inset-10 lg:inset-12;
+}
+
+.banner-grid {
+  @apply uni-pad *:w-full lg:horizontal lg:items-stretch vertical gap-6;
+}
+.banner-grid img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.banner-grid > div:first-child {
+  @apply bg-cus-red aspect-[1/1.211678832116788] relative;
+}
+.banner-grid > div:last-child {
+  @apply aspect-[1/1.211678832116788] grid grid-rows-2 gap-6;
+}
+.banner-grid > div:last-child > div {
+  @apply relative;
+}
+.banner-grid > div:last-child > div > div {
+  @apply z-[1] absolute bottom-8 left-8 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12;
+}
+
+.banner-content {
+  @apply vertical gap-3;
+}
+.banner-content h3 {
+  @apply lg:headline-5 headline-6 text-natural-7;
+}
+
+/* prevent scroll when side bar is active */
+body:has(.side-bar.active) {
+  overflow: hidden;
 }

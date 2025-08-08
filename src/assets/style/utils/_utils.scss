@@ -1,5 +1,7 @@
 
 .ghost-hover-md{
+    --size : 1.7;
+    --size-hover : 1.5;
     @apply relative;
     z-index: 0; 
     &::after{
@@ -14,11 +16,11 @@
 
     &:hover{
         &::after{
-            @apply scale-[1.7]; 
+            @apply scale-[var(--size)]; 
         }
         &:active{
             &::after{
-                @apply bg-neutral-800/[.06] scale-[1.5];
+                @apply bg-neutral-800/[.06] scale-[var(--size-hover)];
             }
         }
     }
@@ -64,4 +66,7 @@
 
 .light-span>span{
     @apply text-natural-4;
+}
+.btn-arrow{
+    @apply horizontal gap-1 button-xs border-b hover:gap-3 transition-all ;
 }

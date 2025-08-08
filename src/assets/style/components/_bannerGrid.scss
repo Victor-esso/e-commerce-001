@@ -1,0 +1,35 @@
+.card-p-style{
+    @apply absolute z-[1] inset-8 md:inset-10 lg:inset-12;
+}
+
+.banner-grid{
+    @apply uni-pad *:w-full lg:horizontal lg:items-stretch vertical gap-6;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    >div:first-child{
+        @apply bg-cus-red aspect-[1/1.211678832116788] relative ;
+        >div{
+            @extend .card-p-style;
+        }
+    }
+    >div:last-child{
+        @apply aspect-[1/1.211678832116788] grid grid-rows-2 gap-6;
+        >div{
+            @apply relative;
+           >div{
+            @apply z-[1] absolute bottom-8 left-8 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12;
+        } 
+        }
+      
+    }
+}
+
+.banner-content{
+    @apply vertical gap-3;
+    h3{
+        @apply lg:headline-5 headline-6 text-natural-7;
+    }
+}

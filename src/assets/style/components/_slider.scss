@@ -1,5 +1,5 @@
 .slider-section{
-    @apply uni-pad w-full relative vertical *:w-full gap-8;
+    @apply uni-pad w-full relative vertical *:w-full gap-8 pb-10;
     .slider-container{
         @apply bg-neutral-300 aspect-[1/0.977491961414791] lg:aspect-[1/0.4785714285714286];
     }

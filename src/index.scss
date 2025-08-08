@@ -17,4 +17,9 @@
 }
 
 
-@import "./assets/style/styles"
+@import "./assets/style/styles";
+
+/* prevent scroll when side bar is active */
+body:has( .side-bar.active){
+    overflow: hidden;
+}

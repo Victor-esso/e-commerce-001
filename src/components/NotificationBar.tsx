@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon } from "@iconify/react"
+import ButtonArrow from './tokens/ButtonArrow'
 
 
 const NotificationBar = () => {
@@ -8,7 +9,7 @@ const NotificationBar = () => {
         <div className='horizontal gap-3'>
             <Icon className='text-[#343839] md:text-2xl text-xl' icon="hugeicons:coupon-percent" />
             <span className='caption-2-semi md:caption-1-semi text-[#343839]'>30% off storewide — Limited time!</span>
-            <button className='lg:horizontal gap-1 button-xs border-b border-cus-blue text-cus-blue hidden'>Shop Now <Icon icon="solar:arrow-right-linear" width="18" /></button>
+            <ButtonArrow className='!border-cus-blue !text-cus-blue max-lg:hidden !duration-300'>Shop Now</ButtonArrow>
         </div>
         
         <div className='absolute right-4'>

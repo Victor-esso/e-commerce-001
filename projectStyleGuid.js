@@ -180,7 +180,7 @@ const customClasses = {
     fontWeight: '500'
   },
   '.uni-pad': {
-    '@apply px-6 md:px-10 lg:px-12 xl:px-14 2xl:px-16 3xl:px-20 4xl:px-0': {},
+    '@apply px-6 md:px-10 lg:px-12 xl:px-14 2xl:px-24 3xl:px-16 4xl:px-0 w-full max-w-[1440px] mx-auto': {},
   },
   '.smooth-transition' : {
     transition : "all 0.6s cubic-bezier(0.30, 1, 0.36, 1)"
