@@ -1,4 +1,5 @@
 import plugin from 'tailwindcss/plugin';
+import project from "./projectStyleGuid"
 /** @type {import('tailwindcss').Config} */
 
 // npm install @tailwindcss/line-clamp  -------- and require('@tailwindcss/line-clamp') in the plugin section of the configuration to use line-clamp-1
@@ -12,20 +13,31 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundSize: {
-        'size-200': '200% 200%',
-      },
-      colors : {
-        accent : {
-          DEFAULT :'#826CFD',
-          dark : "#34105F",
-          light :"#A596F7"
-        },
-        dark : "#080812"
+
+      screens:{
+        'xs' : '470px',
+        
+        'HD':'1280px',
+
+        '3xl':'1920px',
+        'FHD':'1920px',
+
+        '4xl':'2560px',
+        'QHD':'2560px',
+        '2K':'2560px',
+
+        '5xl':'3840px',
+        'UHD':'3840px',
+        '4K':'3840px',
       },
 
+
+      colors : project.colors,
+
       fontFamily:{
-        switzer : '"Switzer", sans-serif',
+        poppins : '"Poppins", sans-serif',
+        inter : '"Inter", sans-serif',
+        'space-grotesk' : '"Space Grotesk", sans-serif',
       },
 
       animation: {
@@ -111,6 +123,7 @@ export default {
   plugins: [
     plugin(function ({addComponents, theme}){
       addComponents({
+        ...project.customClasses,
 
         '.horizontal' : {
           display: 'flex',

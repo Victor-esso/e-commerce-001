@@ -4,7 +4,11 @@
 
 
 *{
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
-@import "./assets//style/styles"
+*[class |= "headline"]{
+    font-family: "Poppins", sans-serif;
+}
+
+@import "./assets/style/styles"

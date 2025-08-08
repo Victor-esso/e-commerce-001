@@ -1,5 +1,6 @@
 import routes from "./routes"
 import { useRoutes } from "react-router-dom"
+import PageContainer from "@components/PageContainer"
 
 const WebsiteRoutes = () => {
   return useRoutes(routes)
@@ -7,9 +8,9 @@ const WebsiteRoutes = () => {
 
 function App() {
   return (
-    <>
+    <PageContainer>
       <WebsiteRoutes />
-    </>
+    </PageContainer>
   )
 }
 

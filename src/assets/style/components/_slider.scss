@@ -1,0 +1,6 @@
+.slider-section{
+    @apply uni-pad w-full relative;
+    .slider-container{
+        @apply bg-natural-5 aspect-[1/0.977491961414791] lg:aspect-[1/0.4785714285714286];
+    }
+}

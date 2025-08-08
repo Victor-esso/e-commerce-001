@@ -1,0 +1,55 @@
+.header-section{
+    @apply uni-pad w-full h-[60px] relative horizontal justify-between;
+
+    .left-section{
+        @apply horizontal gap-1;
+
+        .menu-btn{
+            @apply lg:hidden text-natural-7;
+        }
+
+        .logo{
+            @apply font-poppins font-semibold md:text-2xl;
+            >span{
+                @apply text-natural-4 font-bold;
+            }
+        }
+    }
+
+    .middle-section{
+        --side-bar-md-width : 350px;
+        --side-bar-width : 80%;
+        @apply bg-white h-dvh w-[var(--side-bar-width)] md:w-[var(--side-bar-md-width)] lg:w-max lg:h-max max-lg:fixed max-lg:top-0 max-md:-left-[var(--side-bar-width)] max-lg:-left-[var(--side-bar-md-width)] transition-all ease-linear duration-200;
+
+        .side-bar{
+            z-index: 9999;
+            .nav-links-container{
+                @apply horizontal lg:gap-10;
+                .nav-link{
+                    @apply button-xs text-natural-4 font-space-grotesk;
+
+                    &.active{
+                        @apply text-natural-7 font-bold;
+                    }
+                }
+            }
+        }
+    }
+
+    &:has(.side-bar.active){
+        .middle-section{
+            @apply left-0;
+        }
+    }
+
+}
+
+.faded-backdrop{
+    position: fixed;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, .32);
+    inset: 0;
+    z-index: 0;
+    backdrop-filter: blur(3px);
+}
