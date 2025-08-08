@@ -69,17 +69,22 @@
 }
 
 .btn-arrow{
-    @apply horizontal gap-1 button-xs border-b hover:gap-3 transition-all pr-5 relative;
+    @apply horizontal gap-1 button-xs border-b hover:gap-3 pr-5 relative active:text-black;
     &[class*="button-s"]{
         @apply pr-6;
     }
     .icon{
-        @apply absolute abs-center-y right-0 transition-all;
+        @apply absolute abs-center-y right-0 transition-[right];
     }
 
     &:hover{
         .icon{
             @apply -right-1;    
+        }
+    }
+    &:active{
+        .icon{
+            @apply -right-2;    
         }
     }
 }
@@ -95,4 +100,19 @@
     >*.active{
         @apply text-natural-5;
     }
+}
+
+button[class |= "swiper-btn"]{
+    @apply w-[52px] aspect-square rounded-full grid-center bg-white text-natural-7;
+    &.swiper-button-disabled{
+        opacity: .4;
+        @apply active:text-cus-red cursor-not-allowed;
+    }
+    &:not(.swiper-button-disabled){
+        @apply  active:scale-95  shadow-xl active:text-cus-green;
+    }
+}
+
+button{
+    @apply noselect;
 }

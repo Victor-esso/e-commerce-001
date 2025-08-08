@@ -71,16 +71,19 @@
 }
 
 .btn-arrow {
-  @apply horizontal gap-1 button-xs border-b hover:gap-3 transition-all pr-5 relative;
+  @apply horizontal gap-1 button-xs border-b hover:gap-3 pr-5 relative active:text-black;
 }
 .btn-arrow[class*=button-s] {
   @apply pr-6;
 }
 .btn-arrow .icon {
-  @apply absolute abs-center-y right-0 transition-all;
+  @apply absolute abs-center-y right-0 transition-[right];
 }
 .btn-arrow:hover .icon {
   @apply -right-1;
+}
+.btn-arrow:active .icon {
+  @apply -right-2;
 }
 
 .img-fit-parent, .product-card > .top > img {
@@ -95,6 +98,21 @@
 }
 .starsRating > *.active {
   @apply text-natural-5;
+}
+
+button[class|=swiper-btn] {
+  @apply w-[52px] aspect-square rounded-full grid-center bg-white text-natural-7;
+}
+button[class|=swiper-btn].swiper-button-disabled {
+  opacity: 0.4;
+  @apply active:text-cus-red cursor-not-allowed;
+}
+button[class|=swiper-btn]:not(.swiper-button-disabled) {
+  @apply active:scale-95 shadow-xl active:text-cus-green;
+}
+
+button {
+  @apply noselect;
 }
 
 .header-section {
@@ -234,7 +252,7 @@
 }
 
 .product-card {
-  @apply relative lg:w-1/4 md:w-[262px] w-[231px] h-max vertical *:w-full gap-3;
+  @apply relative lg:w-[308px] md:w-[262px] w-[231px] h-max vertical *:w-full gap-3;
 }
 .product-card > .top {
   @apply w-full aspect-[1/1.33206106870229] relative overflow-hidden;
@@ -259,7 +277,7 @@
   @apply top-4 right-4;
 }
 .product-card > .top .wishlist > button {
-  @apply w-8 h-8 rounded-full bg-white shadow-xl grid-center transition-all lg:scale-0 lg:opacity-0;
+  @apply w-8 h-8 rounded-full bg-white shadow-xl grid-center transition-all lg:scale-110;
 }
 .product-card > .top .wishlist > button .active {
   @apply hidden text-cus-red;
@@ -298,17 +316,19 @@
 .product-card:hover > .top .add-to-cart {
   @apply delay-150 bottom-0 opacity-100;
 }
-.product-card:hover > .top .wishlist > button {
-  @apply delay-100 lg:scale-110 opacity-100;
-}
-.product-card:hover > .top .wishlist > button:is(:hover) {
-  @apply delay-0 lg:scale-125;
-}
-.product-card:hover > .top .wishlist > button:is(:hover):active {
-  @apply scale-95;
-}
 
 /* prevent scroll when side bar is active */
 body:has(.side-bar.active) {
   overflow: hidden;
+}
+
+.swiper {
+  @apply w-full;
+}
+.swiper.swiper-auto .swiper-slide {
+  @apply w-max;
+}
+.swiper .swiper-wrapper {
+  width: -moz-max-content !important;
+  width: max-content !important;
 }

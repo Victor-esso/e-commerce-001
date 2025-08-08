@@ -1,16 +1,50 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import ButtonArrow from './tokens/ButtonArrow'
 import ProductCard from './tokens/ProductCard'
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper';
+import { Icon } from '@iconify/react';
+import { Navigation } from 'swiper/modules';
+import newArrivalsData from '@data/newArrivals';
 const NewArrivals = () => {
+  const swiperRef = useRef<SwiperType | null>(null)
   return (
     <div className='new-arrivals'>
-        <div className='horizontal md:justify-between items-end'>
+        <div className='horizontal justify-between items-end'>
             <h2 className='md:headline-4 headline-5'>New<br/>Arrivals</h2>
+            <div className='horizontal gap-6'>
+                <button className='swiper-btn-prev' aria-label='swiper-left'>
+                    <Icon icon="solar:arrow-left-outline" width="32" height="32" />
+                </button>
+                <button className='swiper-btn-next' aria-label='swiper-left'>
+                    <Icon icon="solar:arrow-right-outline" width="32" height="32" />
+                </button>
+            </div>
             <ButtonArrow className='!button-s max-md:hidden'>More Products</ButtonArrow>
         </div>
-        <div className='horizontal'>
-            <ProductCard liked={true} ratings={3} price={199} oldPrice={400} />
+        <div>
+            <Swiper
+                className='swiper-auto max-sm:!overflow-visible no-select'
+                modules={[Navigation]}
+                spaceBetween={16}
+                 breakpoints={{
+                    1024: { // lg screens (≥1024px)
+                    spaceBetween: 24,
+                    },
+                }}
+                slidesPerView="auto"
+                navigation={{ prevEl: '.swiper-btn-prev', nextEl: '.swiper-btn-next' }}
+                onSwiper={(swiper) =>{
+                    swiperRef.current = swiper
+                }}
+                
+            >
+                {newArrivalsData.map((data, i) =>(
+                    <SwiperSlide key={i}>
+                        <ProductCard liked={data.liked} ratings={data.ratings} price={data.price} oldPrice={data.oldPrice} name={data.name} image={data.image} />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </div>
         <ButtonArrow className='!button-s md:hidden !w-max'>More Products</ButtonArrow>
     </div>

@@ -23,3 +23,15 @@
 body:has( .side-bar.active){
     overflow: hidden;
 }
+
+.swiper{
+    @apply w-full;
+    &.swiper-auto{
+        .swiper-slide{
+            @apply w-max;
+        }
+    }
+    .swiper-wrapper{
+        width: max-content !important;
+    }
+}

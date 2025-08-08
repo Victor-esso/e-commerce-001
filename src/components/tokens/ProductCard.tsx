@@ -7,13 +7,16 @@ type props = {
     price?: number;
     oldPrice?: number;
     image? : string;
+    name? : string;
 }
 const ProductCard:React.FC<props> = ({
     liked = false,
     ratings = 0,
     price = 0,
     oldPrice = 0,
-    image = "default.svg"
+    image = "default.svg",
+    name = "Default name"
+
  }) => {
     const [isLiked , setIsLiked ] = useState(liked)
   return (
@@ -40,7 +43,7 @@ const ProductCard:React.FC<props> = ({
         </div>
         <div className="details">
             <StarsRating rating={ratings} />
-            <p>Loveseat Sofa</p>
+            <p>{name}</p>
             <div className="prices">
                 <span>${price.toFixed(2)}</span>
                 {oldPrice > 0 && <span className='old'>${oldPrice.toFixed(2)}</span>}
