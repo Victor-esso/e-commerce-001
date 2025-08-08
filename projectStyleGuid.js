@@ -16,7 +16,7 @@ const colors = {
         4 : "#6C7275",
         5 : "#343839",
         6 : "#232627",
-        7 : "#232627",
+        7 : "#141718",
     }
 }
 
@@ -141,37 +141,43 @@ const customClasses = {
     fontSize: '16px',
     lineHeight: '16px',
     letterSpacing: '0px',
+    fontWeight: '700',
   },
   '.hairline-2': {
     fontSize: '12px',
     lineHeight: '12px',
     letterSpacing: '0px',
+    fontWeight: '700',
   },
   '.button-xl': {
     fontSize: '26px',
     lineHeight: '38px',
     letterSpacing: '0px',
+    fontWeight: '500'
   },
   '.button-l': {
     fontSize: '22px',
     lineHeight: '34px',
     letterSpacing: '0px',
+    fontWeight: '500'
   },
   '.button-m': {
     fontSize: '18px',
     lineHeight: '32px',
     letterSpacing: '-0.4px',
+    fontWeight: '500'
   },
   '.button-s': {
     fontSize: '16px',
     lineHeight: '28px',
     letterSpacing: '-0.4px',
+    fontWeight: '500'
   },
   '.button-xs': {
     fontSize: '14px',
     lineHeight: '24px',
     letterSpacing: '0px',
-    fontWeight : '500'
+    fontWeight: '500'
   },
   '.uni-pad': {
     '@apply px-6 md:px-10 lg:px-12 xl:px-14 2xl:px-16 3xl:px-20 4xl:px-0': {},

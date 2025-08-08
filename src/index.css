@@ -9,6 +9,57 @@
   font-family: "Poppins", sans-serif;
 }
 
+.ghost-hover-md {
+  @apply relative;
+  z-index: 0;
+}
+.ghost-hover-md::after {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  @apply abs-center-xy rounded-md bg-neutral-800/[.05] transition-all scale-0;
+  z-index: -1;
+}
+.ghost-hover-md:hover::after {
+  @apply scale-[1.7];
+}
+.ghost-hover-md:hover:active::after {
+  @apply bg-neutral-800/[.06] scale-[1.5];
+}
+
+.ghost-hover-full, .header-section .other-actions button, .header-section .left-section .menu-btn {
+  @apply relative;
+  z-index: 0;
+}
+.ghost-hover-full::after, .header-section .other-actions button::after, .header-section .left-section .menu-btn::after {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  @apply abs-center-xy rounded-full bg-neutral-800/[.05] transition-all scale-0;
+  z-index: -1;
+}
+.ghost-hover-full:hover::after, .header-section .other-actions button:hover::after, .header-section .left-section .menu-btn:hover::after {
+  @apply scale-[1.7];
+}
+.ghost-hover-full:hover:active::after, .header-section .other-actions button:hover:active::after, .header-section .left-section .menu-btn:hover:active::after {
+  @apply bg-neutral-800/[.06] scale-[1.5];
+}
+
+.badge {
+  @apply rounded-full grid-center w-5 h-5 bg-natural-7 text-xs font-bold text-white;
+}
+
+.btn {
+  @apply px-10 py-[6px] bg-natural-7 text-white rounded-lg button-m border border-natural-7 active:scale-95 transition-all;
+}
+.btn.outline {
+  @apply text-natural-7 bg-transparent outline-none;
+}
+
 .header-section {
   @apply uni-pad w-full h-[60px] relative horizontal justify-between;
 }
@@ -18,31 +69,35 @@
 .header-section .left-section .menu-btn {
   @apply lg:hidden text-natural-7;
 }
-.header-section .left-section .logo {
-  @apply font-poppins font-semibold md:text-2xl;
-}
-.header-section .left-section .logo > span {
-  @apply text-natural-4 font-bold;
-}
 .header-section .middle-section {
-  --side-bar-md-width: 350px;
-  --side-bar-width: 80%;
+  --side-bar-md-width: 380px;
+  --side-bar-width: 82%;
   @apply bg-white h-dvh w-[var(--side-bar-width)] md:w-[var(--side-bar-md-width)] lg:w-max lg:h-max max-lg:fixed max-lg:top-0 max-md:-left-[var(--side-bar-width)] max-lg:-left-[var(--side-bar-md-width)] transition-all ease-linear duration-200;
+  z-index: 99;
 }
 .header-section .middle-section .side-bar {
-  z-index: 9999;
+  @apply max-lg:p-10 max-lg:vertical max-lg:justify-between max-lg:w-full max-lg:h-dvh;
 }
 .header-section .middle-section .side-bar .nav-links-container {
-  @apply horizontal lg:gap-10;
+  @apply lg:horizontal lg:gap-10 vertical w-full max-lg:gap-4;
 }
 .header-section .middle-section .side-bar .nav-links-container .nav-link {
-  @apply button-xs text-natural-4 font-space-grotesk;
+  @apply button-xs text-natural-4 font-space-grotesk max-lg:h-10 max-lg:border-b border-natural-3 max-lg:block max-lg:w-full;
 }
 .header-section .middle-section .side-bar .nav-links-container .nav-link.active {
-  @apply text-natural-7 font-bold;
+  @apply text-natural-7 font-bold border-natural-4;
 }
 .header-section:has(.side-bar.active) .middle-section {
   @apply left-0;
+}
+.header-section .other-actions {
+  @apply horizontal gap-4;
+}
+.header-section .other-actions button {
+  @apply aspect-square w-6 relative text-natural-7;
+}
+.header-section .other-actions > button {
+  @apply max-md:hidden;
 }
 
 .faded-backdrop {
@@ -51,7 +106,41 @@
   height: 100dvh;
   background-color: rgba(0, 0, 0, 0.32);
   inset: 0;
-  z-index: 0;
+  z-index: 50;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
+}
+
+.app-logo {
+  @apply font-poppins text-lg font-semibold md:text-2xl;
+}
+.app-logo > span {
+  @apply text-natural-4 font-bold;
+}
+
+.search-container {
+  @apply lg:hidden;
+  @apply w-full h-max relative border border-natural-4 rounded-md;
+}
+.search-container > span {
+  @apply absolute abs-center-y left-4 text-natural-7;
+}
+.search-container > input {
+  @apply px-4 py-3 pl-12 bg-transparent w-full focus-within:outline-none placeholder:text-natural-4 placeholder:caption-1;
+}
+.search-container:has(input:focus-within) {
+  @apply border-natural-7 bg-neutral-500/[.05];
+}
+
+.single-link {
+  @apply horizontal justify-between h-10 border-b border-natural-3 w-full;
+}
+.single-link button:has(svg) {
+  @apply text-natural-7;
+}
+.single-link > span {
+  @apply button-m text-natural-4;
+}
+.single-link:hover > span {
+  @apply text-natural-7;
 }

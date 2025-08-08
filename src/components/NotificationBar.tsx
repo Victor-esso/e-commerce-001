@@ -11,8 +11,10 @@ const NotificationBar = () => {
             <button className='lg:horizontal gap-1 button-xs border-b border-cus-blue text-cus-blue hidden'>Shop Now <Icon icon="solar:arrow-right-linear" width="18" /></button>
         </div>
         
-        <div className='aspect-square hover:bg-black/[.05] w-8 grid-center rounded-xl cursor-pointer transition-all absolute right-4'>
-            <Icon className='text-natural-5' icon="hugeicons:cancel-01" width="20" height="20" />
+        <div className='absolute right-4'>
+          <div className='aspect-square w-6 grid-center rounded-xl cursor-pointer transition-all ghost-hover-full'>
+              <Icon className='text-natural-5' icon="hugeicons:cancel-01" width="20" height="20" />
+          </div>
         </div>
     </div>
   )
