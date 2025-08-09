@@ -26,10 +26,10 @@ const Footer = () => {
                             Privacy Policy
                         </NavLink>
                         <NavLink
-                            to="/privacy-policy"
+                            to="/terms"
                             className={ ({ isActive }) => `${ isActive ? 'active' : '' } nav-link` }
                         >
-                            Privacy Policy
+                            Terms of Use
                         </NavLink>
                     </div>
                 </div>
