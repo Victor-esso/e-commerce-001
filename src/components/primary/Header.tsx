@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Icon } from "@iconify/react"
 import { NavLink } from 'react-router-dom';
 import NavLinks from '@components/tokens/NavLinks';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const goto = useNavigate()
 
   const [isSideBarOpen , setSideBarOpen] = useState(false)
   const openSidebar = () => setSideBarOpen(true)
@@ -23,15 +25,20 @@ const Header = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [isSideBarOpen]);
 
+  }, [isSideBarOpen]);
+  
+  const goHome = () => {
+    goto("/")
+    setSideBarOpen(false)
+  }
   return (
     <header className='header-section bg-white'>
         {isSideBarOpen && <div className='faded-backdrop' onClick={() => closeSidebar()}></div>}
 
         <div className="left-section">
           <button className='menu-btn' onClick={() => openSidebar()}><Icon icon="solar:hamburger-menu-outline" width="24" height="24" /> <span className='hidden'>Menu</span></button>
-          <span className='app-logo'>3legant<span>.</span></span>
+          <button className='app-logo' onClick={() => goHome()}>3legant<span>.</span></button>
         </div>
 
         <div className="middle-section">
@@ -39,7 +46,7 @@ const Header = () => {
             <div className='w-full lg:w-max vertical gap-4'>
               {/* Logo & Close Btn */}
               <div className='horizontal justify-between lg:hidden w-full'>
-                <span className='app-logo'>3legant<span>.</span></span>
+                <button className='app-logo' onClick={() => goHome()}>3legant<span>.</span></button>
                 <div onClick={() => closeSidebar()} className='aspect-square w-6 ghost-hover-full grid-center cursor-pointer transition-all'>
                     <Icon className='text-natural-5' icon="hugeicons:cancel-01" width="20" height="20" />
                 </div >
