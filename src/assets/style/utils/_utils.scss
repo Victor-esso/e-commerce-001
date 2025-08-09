@@ -116,3 +116,34 @@ button[class |= "swiper-btn"]{
 button{
     @apply noselect;
 }
+
+.app-section{
+    @apply  uni-pad md:pt-12 md:py-0 vertical *:w-full md:gap-12 gap-10 py-8 ;
+}
+
+
+body .app-pagination{
+    all: unset;
+    width: max-content !important;
+    transform: unset !important;
+    @apply horizontal gap-2 ;
+    >span.swiper-pagination-bullet{
+        all: unset;
+        margin: 0 !important;
+        @apply w-4 h-4 relative border border-transparent rounded-full border-solid block cursor-pointer;
+
+        &::after{
+            content: ' ';
+            @apply w-2 h-2 bg-natural-4 rounded-full absolute abs-center-xy;
+        }
+
+        &.swiper-pagination-bullet-active{
+            @apply border-natural-7;
+            &::after{
+                @apply bg-natural-7;
+            }
+        }
+
+        
+    }
+}

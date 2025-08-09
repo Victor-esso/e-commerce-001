@@ -115,6 +115,33 @@ button {
   @apply noselect;
 }
 
+.app-section, .values-section {
+  @apply uni-pad md:pt-12 md:py-0 vertical *:w-full md:gap-12 gap-10 py-8;
+}
+
+body .app-pagination {
+  all: unset;
+  width: -moz-max-content !important;
+  width: max-content !important;
+  transform: unset !important;
+  @apply horizontal gap-2;
+}
+body .app-pagination > span.swiper-pagination-bullet {
+  all: unset;
+  margin: 0 !important;
+  @apply w-4 h-4 relative border border-transparent rounded-full border-solid block cursor-pointer;
+}
+body .app-pagination > span.swiper-pagination-bullet::after {
+  content: " ";
+  @apply w-2 h-2 bg-natural-4 rounded-full absolute abs-center-xy;
+}
+body .app-pagination > span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply border-natural-7;
+}
+body .app-pagination > span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+  @apply bg-natural-7;
+}
+
 .header-section {
   @apply uni-pad w-full h-[60px] relative horizontal justify-between;
 }
@@ -245,7 +272,7 @@ button {
 }
 
 .new-arrivals {
-  @apply uni-pad md:pt-12 md:py-0 vertical *:w-full md:gap-12 gap-10 py-8;
+  @apply uni-pad md:py-12 vertical *:w-full md:gap-12 gap-10 py-8;
 }
 .new-arrivals .icon {
   @apply absolute;
@@ -315,6 +342,22 @@ button {
 }
 .product-card:hover > .top .add-to-cart {
   @apply delay-150 bottom-0 opacity-100;
+}
+
+.values-section {
+  @apply lg:horizontal grid grid-rows-2 grid-cols-2 md:gap-6 gap-4;
+}
+.values-section > div {
+  @apply w-full py-8 px-4 md:py-12 md:px-8 bg-natural-2 vertical gap-4 text-natural-7;
+}
+.values-section > div > div {
+  @apply vertical gap-2;
+}
+.values-section > div > div P {
+  @apply caption-1-semi md:headline-7;
+}
+.values-section > div > div span {
+  @apply caption-1 text-natural-4 max-sm:pr-7;
 }
 
 /* prevent scroll when side bar is active */

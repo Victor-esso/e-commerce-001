@@ -1,0 +1,16 @@
+.values-section{
+    @extend .app-section;
+    @apply lg:horizontal grid grid-rows-2 grid-cols-2 md:gap-6 gap-4;
+    >div{
+        @apply w-full py-8 px-4 md:py-12 md:px-8 bg-natural-2 vertical gap-4 text-natural-7;
+        >div{
+            @apply vertical gap-2;
+            P{
+                @apply caption-1-semi md:headline-7;
+            }
+            span{
+                @apply caption-1 text-natural-4 max-sm:pr-7;
+            }
+        }
+    }
+}

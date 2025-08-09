@@ -1,6 +1,7 @@
 import BannerGrid from "@components/BannerGrid"
 import NewArrivals from "@components/NewArrivals"
 import SliderSection from "@components/SliderSection"
+import ValuesSection from "@components/ValuesSection"
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <SliderSection/>
       <BannerGrid />
       <NewArrivals/>
+      <ValuesSection />
     </section>
   )
 }

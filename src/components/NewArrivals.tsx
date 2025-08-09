@@ -4,7 +4,7 @@ import ProductCard from './tokens/ProductCard'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import { Icon } from '@iconify/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation , Pagination } from 'swiper/modules';
 import newArrivalsData from '@data/newArrivals';
 const NewArrivals = () => {
   const swiperRef = useRef<SwiperType | null>(null)
@@ -24,16 +24,20 @@ const NewArrivals = () => {
         </div>
         <div>
             <Swiper
-                className='swiper-auto max-sm:!overflow-visible no-select'
-                modules={[Navigation]}
+                className='swiper-auto no-select '
+                modules={[Navigation , Pagination]}
                 spaceBetween={16}
-                 breakpoints={{
+                centeredSlides={true}
+                breakpoints={{
                     1024: { // lg screens (≥1024px)
-                    spaceBetween: 24,
-                    },
+                        spaceBetween: 24,
+                        centeredSlides: false,
+                        
+                    }
                 }}
                 slidesPerView="auto"
                 navigation={{ prevEl: '.swiper-btn-prev', nextEl: '.swiper-btn-next' }}
+                pagination={{ el : '.arrival-pagination', clickable: true, enabled : true}}
                 onSwiper={(swiper) =>{
                     swiperRef.current = swiper
                 }}
@@ -46,7 +50,8 @@ const NewArrivals = () => {
                 ))}
             </Swiper>
         </div>
-        <ButtonArrow className='!button-s md:hidden !w-max'>More Products</ButtonArrow>
+        <div className='grid-center w-full max-sm:hidden'><div className='arrival-pagination app-pagination'></div></div>
+        <ButtonArrow className='!button-s md:hidden !w-max mx-auto'>More Products</ButtonArrow>
     </div>
   )
 }
