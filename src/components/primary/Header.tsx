@@ -50,7 +50,7 @@ const Header = () => {
                 <input type="text" placeholder="Search" id="searchInput" autoComplete='off' />
               </label>
               {/* Nav links */}
-              <NavLinks />
+              <NavLinks setSideBarOpen={setSideBarOpen} />
             </div>
 
             <div className='vertical w-full lg:hidden gap-4'>
@@ -59,6 +59,7 @@ const Header = () => {
                 <NavLink
                 to="/cart"
                 className={({ isActive }) => `${isActive ? 'active' : ''} single-link`}
+                onClick={() =>setSideBarOpen(false)}
               > 
                 <span>Cart</span>
                 <div className='horizontal gap-1'>
@@ -69,6 +70,7 @@ const Header = () => {
                 <NavLink
                   to="/wishlist"
                   className={({ isActive }) => `${isActive ? 'active' : ''} single-link`}
+                  onClick={() =>setSideBarOpen(false)}
                 > 
                   <span>Wishlist</span>
                   <div className='horizontal gap-1'>

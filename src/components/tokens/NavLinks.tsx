@@ -7,8 +7,11 @@ const navItems = [
   { name: 'Product', to: '/product' },
   { name: 'Contact Us', to: '/contact' },
 ];
+type props = {
+  setSideBarOpen? : (open : boolean) => void;
+}
 
-export default function NavLinks() {
+const NavLinks : React.FC<props>  = ({ setSideBarOpen }) =>  {
   return (
     <nav className="nav-links-container">
       {navItems.map((item) => (
@@ -16,6 +19,7 @@ export default function NavLinks() {
           key={item.to}
           to={item.to}
           className={ ({ isActive }) => `${ isActive ? 'active' : '' } nav-link` }
+          onClick={() => setSideBarOpen?.(false)}
         >
           {item.name}
         </NavLink>
@@ -23,3 +27,5 @@ export default function NavLinks() {
     </nav>
   );
 }
+
+export default NavLinks

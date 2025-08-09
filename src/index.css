@@ -227,6 +227,13 @@ body .app-pagination > span.swiper-pagination-bullet.swiper-pagination-bullet-ac
   @apply text-natural-7;
 }
 
+.header-wrapper {
+  @apply bg-white;
+}
+.header-wrapper.scrolled {
+  @apply shadow-xl lg:shadow-2xl;
+}
+
 .slider-section {
   @apply uni-pad w-full relative vertical *:w-full gap-8 pb-10;
 }
