@@ -1,3 +1,4 @@
+import Banner from "@components/Banner"
 import BannerGrid from "@components/BannerGrid"
 import NewArrivals from "@components/NewArrivals"
 import SliderSection from "@components/SliderSection"
@@ -10,6 +11,7 @@ const Home = () => {
       <BannerGrid />
       <NewArrivals/>
       <ValuesSection />
+      <Banner/>
     </section>
   )
 }
