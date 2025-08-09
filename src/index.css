@@ -385,6 +385,26 @@ body .app-pagination > span.swiper-pagination-bullet.swiper-pagination-bullet-ac
   @apply lg:absolute inset-0 w-full h-full object-cover;
 }
 
+.blog-section {
+  @apply uni-pad py-10 md:py-14 lg:py-20 vertical *:w-full gap-10;
+}
+
+.article-single {
+  @apply w-full vertical gap-4 lg:gap-6 text-natural-7;
+}
+.article-single .info {
+  @apply vertical gap-2;
+}
+.article-single .info p {
+  @apply lg:headline-7 body-2-semi;
+}
+.article-single .img-holder {
+  @apply bg-neutral-100 aspect-[1/0.91036] w-full relative;
+}
+.article-single .img-holder img {
+  @apply absolute inset-0 w-full h-full object-cover;
+}
+
 /* prevent scroll when side bar is active */
 body:has(.side-bar.active) {
   overflow: hidden;

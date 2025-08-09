@@ -1,0 +1,19 @@
+.blog-section{
+    @apply  uni-pad py-10 md:py-14 lg:py-20 vertical *:w-full gap-10; 
+}
+
+.article-single{
+    @apply w-full vertical gap-4 lg:gap-6 text-natural-7;
+    .info{
+        @apply vertical gap-2; 
+        p{
+            @apply lg:headline-7 body-2-semi;
+        }
+    }
+    .img-holder{
+        @apply bg-neutral-100 aspect-[1/0.91036] w-full relative;
+        img{
+            @apply absolute inset-0 w-full h-full object-cover; 
+        }
+    }
+}
