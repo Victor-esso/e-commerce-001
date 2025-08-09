@@ -277,7 +277,7 @@ body .app-pagination > span.swiper-pagination-bullet.swiper-pagination-bullet-ac
      object-fit: cover;
 }
 .banner-grid > div:first-child {
-  @apply bg-cus-red aspect-[1/1.211678832116788] relative;
+  @apply bg-natural-2 aspect-[1/1.211678832116788] relative;
 }
 .banner-grid > div:last-child {
   @apply aspect-[1/1.211678832116788] grid grid-rows-2 gap-6;
@@ -404,7 +404,7 @@ body .app-pagination > span.swiper-pagination-bullet.swiper-pagination-bullet-ac
   @apply body-2 md:body-1 w-full md:w-[452px];
 }
 .banner-section .image-placeholder {
-  @apply w-full bg-red-700 relative max-sm:aspect-[1/.55];
+  @apply w-full bg-natural-2 relative max-sm:aspect-[1/.55];
 }
 .banner-section .image-placeholder img {
   @apply lg:absolute inset-0 w-full h-full object-cover;

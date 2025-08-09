@@ -10,7 +10,7 @@
         object-fit: cover;
     }
     >div:first-child{
-        @apply bg-cus-red aspect-[1/1.211678832116788] relative ;
+        @apply bg-natural-2 aspect-[1/1.211678832116788] relative ;
         >div{
             @extend .card-p-style;
         }
