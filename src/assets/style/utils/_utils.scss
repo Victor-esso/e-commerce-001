@@ -147,3 +147,20 @@ body .app-pagination{
         
     }
 }
+
+.banner-pagination{
+    width: max-content !important;
+    @apply h-max absolute  z-[1] horizontal gap-2 lg:gap-4;
+    >span{
+        all: unset;
+        margin: 0 !important;
+        @apply w-2 h-2 bg-white rounded-full block transition-all opacity-50;
+        &.swiper-pagination-bullet-active{
+            @apply w-[30px] opacity-100;
+        }
+    }
+}
+
+.swiper-slide>img{
+    @apply absolute inset-0 w-full h-full object-cover;
+}

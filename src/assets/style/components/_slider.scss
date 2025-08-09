@@ -1,7 +1,7 @@
 .slider-section{
     @apply uni-pad w-full relative vertical *:w-full gap-8 pb-10;
     .slider-container{
-        @apply bg-neutral-300 aspect-[1/0.977491961414791] lg:aspect-[1/0.4785714285714286];
+        @apply bg-neutral-300 aspect-[1/0.86] lg:aspect-[1/0.4785714285714286];
     }
     .header-text{
         @apply light-span font-medium text-natural-7 leading-[120%];

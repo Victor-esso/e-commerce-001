@@ -4,6 +4,8 @@ import PageContainer from "@components/PageContainer"
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+import 'swiper/css/effect-coverflow'
 
 const WebsiteRoutes = () => {
   return useRoutes(routes)

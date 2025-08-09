@@ -142,6 +142,24 @@ body .app-pagination > span.swiper-pagination-bullet.swiper-pagination-bullet-ac
   @apply bg-natural-7;
 }
 
+.banner-pagination {
+  width: -moz-max-content !important;
+  width: max-content !important;
+  @apply h-max absolute z-[1] horizontal gap-2 lg:gap-4;
+}
+.banner-pagination > span {
+  all: unset;
+  margin: 0 !important;
+  @apply w-2 h-2 bg-white rounded-full block transition-all opacity-50;
+}
+.banner-pagination > span.swiper-pagination-bullet-active {
+  @apply w-[30px] opacity-100;
+}
+
+.swiper-slide > img {
+  @apply absolute inset-0 w-full h-full object-cover;
+}
+
 .header-section {
   @apply uni-pad w-full h-[60px] relative horizontal justify-between;
 }
@@ -238,7 +256,7 @@ body .app-pagination > span.swiper-pagination-bullet.swiper-pagination-bullet-ac
   @apply uni-pad w-full relative vertical *:w-full gap-8 pb-10;
 }
 .slider-section .slider-container {
-  @apply bg-neutral-300 aspect-[1/0.977491961414791] lg:aspect-[1/0.4785714285714286];
+  @apply bg-neutral-300 aspect-[1/0.86] lg:aspect-[1/0.4785714285714286];
 }
 .slider-section .header-text {
   @apply light-span font-medium text-natural-7 leading-[120%];
