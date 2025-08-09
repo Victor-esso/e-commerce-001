@@ -1,0 +1,25 @@
+.footer-01{
+    @apply bg-natural-7 text-white py-12 sm:py-20 sm:pb-8;
+
+    .nav-links-container{
+        @apply lg:horizontal lg:gap-10 vertical items-center w-full max-lg:gap-4;
+        .nav-link{
+            @apply button-xs text-natural-3/50 font-space-grotesk max-lg:h-10 max-lg:block max-lg:w-full max-lg:text-center hover:text-white/70;
+
+
+            &.active{
+                @apply text-white font-bold;
+            }
+
+        }
+
+        &.fix-up{
+            @apply horizontal max-lg:justify-center max-lg:gap-6;
+            .nav-link{
+                width: max-content;
+                height: max-content;
+                flex-shrink: 0;
+            }
+        }
+    } 
+}

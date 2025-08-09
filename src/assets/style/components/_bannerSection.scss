@@ -1,5 +1,5 @@
 .banner-section{
-    @apply  vertical *:w-full sm:horizontal sm:items-stretch w-full max-w-[1519px] mx-auto; 
+    @apply  vertical *:w-full sm:horizontal sm:items-stretch w-full uni-pad mx-auto max-lg:!px-0; 
 
     .content-placeholder{
         @apply py-14 px-8 bg-natural-2 lg:pl-[72px] sm:pl-12 sm:py-16 lg:py-20 3xl:py-28 vertical gap-6 text-natural-7;

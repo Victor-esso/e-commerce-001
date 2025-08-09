@@ -1,6 +1,7 @@
 import React from 'react'
 import NotificationBar from './NotificationBar';
 import Header from './primary/Header';
+import Footer from './primary/Footer';
 
 type props = {
     children?: React.ReactNode
@@ -16,6 +17,7 @@ const PageContainer : React.FC<props> = ({ children }) => {
             <section className='w-full'>
                 {children}
             </section>
+            <Footer/>
         </>
     );
 }
